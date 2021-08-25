@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>唐卡流派</title>
+
+
+    <!-- Fonts URL -->
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700%7CPlayfair+Display:400,500,600,700,800,900%7CWork+Sans:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="/css/magnific-popup.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/hover-min.css">
+    <link rel="stylesheet" href="/css/muzex-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+
+
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div><!-- /.preloader -->
+    <div class="page-wrapper">
+
+        <nav class="main-nav-one stricky main-nav-one__home-two">
+            <div class="container">
+                <div class="inner-container">
+                    <div class="logo-box">
+                        <a href="/resource/index">
+                            <img src="/images/team/logo-2.png" alt="" width="160">
+                        </a>
+                        <a href="#" class="side-menu__toggler"><i class="muzex-icon-menu"></i></a>
+                    </div><!-- /.logo-box -->
+                    <div class="main-nav__main-navigation">
+                        <ul class="main-nav__navigation-box">
+                            <li >
+                                <a href="/resource/index">首页</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="/resource/about">介绍</a>
+                                <ul>
+                                    <li><a href="/resource/toAbout">历史</a></li>
+                                    <li><a href="/resource/toMembership">科普</a></li>
+                                    <li><a href="/resource/toVenue">流派</a></li>
+                                    <li><a href="/resource/toEvent2">绘制</a></li>
+                                    <li><a href="/resource/toEvent1">装裱</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#">唐卡类别</a>
+                                <ul>
+                                    <li><a href="/resourceClassType/toAllType">全部类型</a></li>
+                                    <li><a href="/resource/resourceListMain">唐卡网格</a></li>
+                                </ul>
+                            </li>
+                        </ul><!-- /.main-nav__navigation-box -->
+                    </div><!-- /.main-nav__main-navigation -->
+                    <div class="main-nav__right">
+                        <a href="#" class="search-popup__toggler"><i class="muzex-icon-search"></i></a>
+                    </div><!-- /.main-nav__right -->
+                </div><!-- /.inner-container -->
+            </div><!-- /.container -->
+        </nav><!-- /.main-nav-one -->
+
+        <section class="page-header" style="background-image: url(/images/backgrounds/home-1.jpg);">
+            <div class="container">
+                <h2>流派</h2>
+            </div><!-- /.container -->
+        </section><!-- /.page-header -->
+
+        <section class="venue-one">
+            <div class="container">
+                <div class="venue-one__top">
+                    <div class="block-title">
+                        <p>流派</p>
+                        <h3>艺术流派</h3>
+                    </div><!-- /.block-title -->
+                    <p>唐卡最早是受尼泊尔风格的影响 在公元7世纪左右，随着佛教的大量传入，西藏境内大兴建寺修庙之风， 当时寺庙内的壁画、塑像等都由尼泊尔和中国的画家、雕塑家所塑绘， 自此之后到15世纪之前的由尼泊尔和藏族艺术家创作的作品，后人一并称之为尼泊尔画派。之后有在宗喀巴时期的齐岗画派；15世纪兴起的勉唐画派和钦则画派；16世纪兴起的噶玛嘎孜画派等。</p>
+                </div><!-- /.venue-one__top -->
+
+                <div class="row high-gutter">
+                    <div class="col-lg-4">
+                        <div class="venue-one__single">
+                            <div class="venue-one__image">
+                                <img src="/images/resources/venue-1.jpg" alt="">
+                            </div><!-- /.venue-one__image -->
+                            <div class="venue-one__content">
+                                <h3><a href="#">尼泊尔画派</a></h3>
+                                <p><span class="venue-one__time">尼泊尔画派主要流行于11世纪至13世纪，松赞干布娶了尼泊尔的尺尊公主，随同公主进藏的有尼泊尔艺术家，他们把尼泊尔的艺术风格融入于西藏本地艺术之中，形成了唐卡中的尼泊尔流派。这个流派的绘向以暖色调为主，画面中央的主尊占有很突出的地位，护法诸尊被安排在四周整齐的小方格内，造像较为简单，身段僵硬，着衣少而单薄，饰物沉重感强。</span> </p>
+                            </div><!-- /.venue-one__content -->
+                        </div><!-- /.venue-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <div class="venue-one__single">
+                            <div class="venue-one__image">
+                                <img src="/images/resources/venue-2.jpg" alt="">
+                            </div><!-- /.venue-one__image -->
+                            <div class="venue-one__content">
+                                <h3><a href="#">齐岗画派</a></h3>
+                                <p><span class="venue-one__time">齐岗画派由雅堆·齐乌岗巴创立，这一田派主要流行于13世纪的卫藏地区，它一方面继承了吐蕃时期和分治时期的绘画神韵，另一方面也吸收了尼泊尔画风的某些特色，主要在于构图上既继承了尼泊尔画派的构图，又稍有变化。中央的主尊所占有的位置相对减少，在色彩上仍然以暖色为主凋。在背景上，此画派喜欢用卷草纹作为装饰，更为生动细腻地描绘了人物的手指、脚趾等细微之处，也使人物的姿势、服饰等更为流畅、飘逸。</span> </p>
+
+                            </div><!-- /.venue-one__content -->
+                        </div><!-- /.venue-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <div class="venue-one__single">
+                            <div class="venue-one__image">
+                                <img src="/images/resources/venue-3.jpg" alt="">
+                            </div><!-- /.venue-one__image -->
+                            <div class="venue-one__content">
+                                <h3><a href="#">勉唐画派</a></h3>
+                                <p><span class="venue-one__time">勉唐画派（另译门赤画派、勉塘画派）艺术产生并形成于赞普时代，兴盛于帕竹时代中期至甘丹颇章时代。画派出创始人为勉拉·顿珠嘉措，其传世之作《造像量度如意宝》，详细论述了绘画和雕塑的造像量度，指出了某些书籍在造像量度上出现的错误及由此带来的恶果，阐述了藏画的实践方法。并博采诸长，该画派造像法度精严，与传统的块面表现相比，尤其注重线条的运用，线条工整流畅，色调活泼鲜亮，变化丰富。旧勉唐画派的画风承袭了印度一尼泊尔绘画样式，但在背景处理上加进了带有地方特色的风景和花卉纹饰，线条匀称精到，浅淡施色加金线勾勒。</span> </p>
+
+                            </div><!-- /.venue-one__content -->
+                        </div><!-- /.venue-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+
+                <div class="row high-gutter">
+                    <div class="col-lg-4">
+                        <div class="venue-one__single">
+                            <div class="venue-one__image">
+                                <img src="/images/resources/venue-4.jpg" alt="">
+                            </div><!-- /.venue-one__image -->
+                            <div class="venue-one__content">
+                                <h3><a href="#">钦则画派</a></h3>
+                                <p><span class="venue-one__time">钦则画派形成于15世纪中叶以后，主要流行于后藏和山南地区，创始人是贡嘎岗堆·钦则钦莫（另译：贡嘎岗堆·钦泽切姆）。钦则钦莫自幼酷爱美术，在传统藏传尼泊尔派绘画的基础上吸收中原汉地、印度等地的绘画技法，创立了画派。钦则画派在构图上保持了印度-尼泊尔绘画传统中主尊像较大的特点，重点突出，周围众小像排列井然有序。但在风景表现中已开始融和汉地绘画的表现程式，逐步形成藏民族绘画语言体系。</span> </p>
+                            </div><!-- /.venue-one__content -->
+                        </div><!-- /.venue-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <div class="venue-one__single">
+                            <div class="venue-one__image">
+                                <img src="/images/resources/venue-5.jpg" alt="">
+                            </div><!-- /.venue-one__image -->
+                            <div class="venue-one__content">
+                                <h3><a href="#">噶玛嘎孜画派</a></h3>
+                                <p><span class="venue-one__time">噶玛嘎孜画派又译“嘎玛嘎赤画派”，亦简称“噶孜派”或“嘎赤派”，脱胎于“门孜”画派。流行于藏区东部，以四川省甘孜、德格和西藏昌都为中心，相传在16世纪由南喀扎西活佛创建，以噶玛巴大法会而得名。在南喀扎西之后，又有两名画师继承了噶孜派画风，一是却吉扎西，以青绿设色著称；一是噶旭噶玛扎西，以独创出新著称。他们与南喀扎西一道，被誉为“噶孜三扎西”。</span> </p>
+
+                            </div><!-- /.venue-one__content -->
+                        </div><!-- /.venue-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <div class="venue-one__single">
+                            <div class="venue-one__image">
+                                <img src="/images/resources/venue-6.jpg" alt="">
+                            </div><!-- /.venue-one__image -->
+                            <div class="venue-one__content">
+                                <h3><a href="#">新勉画派</a></h3>
+                                <p><span class="venue-one__time">新勉画派即新勉唐画派，指五世达赖时期（明泰昌元年至清康熙四年）的藏画师藏巴·曲英嘉措在继承勉唐画派精华、综合噶玛嘎孜画派和钦则画派的部分特点、吸收汉地绘画的某些因素的基础上，开一代新风，成为西藏民族绘画的最典型特点就是“标准样式”，即指典范，是近现代西藏佛教绘画的“经典”和“范例”。格鲁教派为进一步巩固政教合一的地方政权，在西藏广建寺院，为完成短时间内广建寺院的任务，新勉派把《度量经》作为制作壁画、唐卡的严格标准，逐步形成了佛教绘画的标准样式。</span> </p>
+
+                            </div><!-- /.venue-one__content -->
+                        </div><!-- /.venue-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.venue-one -->
+
+
+        <footer class="site-footer">
+
+            <div class="site-footer__bottom">
+                <div class="container">
+                    <div class="inner-container">
+                        <p>&copy; Copyright 2021 Visualization Institute All Rights Reserved</p>
+                        <a href="/resource/index" class="site-footer__bottom-logo">
+                            <img src="/images/team/logo-1.png" alt="">
+                        </a>
+                        <div class="site-footer__bottom-links">
+                            <a href="#">Terms & conditions</a>
+                            <a href="#">Privacy policy & Terms of use</a>
+                        </div><!-- /.site-footer__bottom-links -->
+                    </div><!-- /.inner-container -->
+                </div><!-- /.container -->
+            </div><!-- /.site-footer__bottom -->
+        </footer><!-- /.site-footer -->
+    </div><!-- /.page-wrapper -->
+
+    <div class="search-popup">
+        <div class="search-popup__overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.search-popup__overlay -->
+        <div class="search-popup__inner">
+            <form action="#" class="search-popup__form">
+                <input type="text" name="search" placeholder="Type here to Search....">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div><!-- /.search-popup__inner -->
+    </div><!-- /.search-popup -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- Template JS -->
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/bootstrap-datepicker.min.js"></script>
+    <script src="/js/bootstrap-select.min.js"></script>
+    <script src="/js/isotope.js"></script>
+    <script src="/js/jquery.ajaxchimp.min.js"></script>
+    <script src="/js/jquery.counterup.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/TweenMax.min.js"></script>
+    <script src="/js/waypoints.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/jquery.lettering.min.js"></script>
+    <script src="/js/jquery.circleType.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="/js/theme.js"></script>
+</body>
+
+</html>

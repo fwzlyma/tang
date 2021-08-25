@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>唐卡绘制</title>
+    <!-- Fonts URL -->
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700%7CPlayfair+Display:400,500,600,700,800,900%7CWork+Sans:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="/css/magnific-popup.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/hover-min.css">
+    <link rel="stylesheet" href="/css/muzex-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+
+
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div><!-- /.preloader -->
+    <div class="page-wrapper">
+
+        <nav class="main-nav-one stricky main-nav-one__home-two">
+            <div class="container">
+                <div class="inner-container">
+                    <div class="logo-box">
+                        <a href="/resource/index">
+                            <img src="/images/team/logo-2.png" alt="" width="160">
+                        </a>
+                        <a href="#" class="side-menu__toggler"><i class="muzex-icon-menu"></i></a>
+                    </div><!-- /.logo-box -->
+                    <div class="main-nav__main-navigation">
+                        <ul class="main-nav__navigation-box">
+                            <li >
+                                <a href="/resource/index">首页</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="/resource/about">介绍</a>
+                                <ul>
+                                    <li><a href="/resource/toAbout">历史</a></li>
+                                    <li><a href="/resource/toMembership">科普</a></li>
+                                    <li><a href="/resource/toVenue">流派</a></li>
+                                    <li><a href="/resource/toEvent2">绘制</a></li>
+                                    <li><a href="/resource/toEvent1">装裱</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#">唐卡类别</a>
+                                <ul>
+                                    <li><a href="/resourceClassType/toAllType">全部类型</a></li>
+                                    <li><a href="/resource/resourceListMain">唐卡网格</a></li>
+                                </ul>
+                            </li>
+                        </ul><!-- /.main-nav__navigation-box -->
+                    </div><!-- /.main-nav__main-navigation -->
+                    <div class="main-nav__right">
+                        <a href="#" class="search-popup__toggler"><i class="muzex-icon-search"></i></a>
+                    </div><!-- /.main-nav__right -->
+                </div><!-- /.inner-container -->
+            </div><!-- /.container -->
+        </nav><!-- /.main-nav-one -->
+
+        <section class="page-header" style="background-image: url(/images/backgrounds/home-1.jpg);">
+            <div class="container">
+                <h2>绘制</h2>
+            </div><!-- /.container -->
+        </section><!-- /.page-header -->
+
+
+        <section class="event-one event-one__event-page-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="event-one__single">
+                            <div class="event-one__image">
+                                <div class="event-one__date">
+                                    <span>1</span>
+                                    选布
+                                </div><!-- /.event-one__date -->
+                                <div class="event-one__image-box">
+                                    <div class="event-one__image-inner">
+                                        <img src="/images/event/draw01.png" alt="">
+                                    </div><!-- /.event-one__image-inner -->
+                                </div><!-- /.event-one__image-box -->
+                            </div><!-- /.event-one__image -->
+                            <div class="event-one__content">
+                                <p>画布一般是浅色画布，不要太厚太硬，画布太厚太硬容易使颜料剥落和皱裂。最合适的画布是织工细密的纯白府绸或棉布，没有图案的白丝绸做画布也非常合适。有的唐卡尺幅很大，只能把几块画布用非常细密的针脚缝合在一起，缝好的两块布的接缝不能有碍于唐卡画面的完整。</p>
+                            </div><!-- /.event-one__content -->
+
+                        </div><!-- /.event-one__single -->
+                    </div><!-- /.col-lg-12 -->
+                    <div class="col-lg-12">
+                        <div class="event-one__single">
+                            <div class="event-one__image">
+                                <div class="event-one__date">
+                                    <span>2</span>
+                                    固定画布
+                                </div><!-- /.event-one__date -->
+                                <div class="event-one__image-box">
+                                    <div class="event-one__image-inner">
+                                        <img src="/images/event/draw02.png" alt="">
+                                    </div><!-- /.event-one__image-inner -->
+                                </div><!-- /.event-one__image-box -->
+                            </div><!-- /.event-one__image -->
+                            <div class="event-one__content">
+
+                                <p>沿画布的四边把它缝在一个细木画框上（画框的四条框都是用和普通铅笔粗细差不多的树枝制成），把细木画框上的画布绷紧，再用结实绳子把细木画框牢牢地绑在大画架“唐卓”上面，按“之”字形的绳路式样把细木画框的四个边同大画架的四个边绑在一起。</p>
+                            </div><!-- /.event-one__content -->
+
+                        </div><!-- /.event-one__single -->
+                    </div><!-- /.col-lg-12 -->
+                    <div class="col-lg-12">
+                        <div class="event-one__single">
+                            <div class="event-one__image">
+                                <div class="event-one__date">
+                                    <span>3</span>
+                                    上胶和打磨
+                                </div><!-- /.event-one__date -->
+                                <div class="event-one__image-box">
+                                    <div class="event-one__image-inner">
+                                        <img src="/images/event/draw03.png" alt="">
+                                    </div><!-- /.event-one__image-inner -->
+                                </div><!-- /.event-one__image-box -->
+                            </div><!-- /.event-one__image -->
+                            <div class="event-one__content">
+
+                                <p>首先在画布上涂上薄薄一层胶水作为“底色”，然后晾干。涂淡胶的目的是防止画布吸附，渗入颜料；防止颜料在画布上“变花”，使颜料涂上面布对不会失掉本色。此后，再薄涂一层有石灰的浆糊。等第二层涂料干后把画布铺到木板或桌面之类的平坦地方，用一块玻璃或贝壳、圆石等光滑的东西反复摩擦画布面，一直到画布的布纹看不见时为止。</p>
+                            </div><!-- /.event-one__content -->
+
+                        </div><!-- /.event-one__single -->
+                    </div><!-- /.col-lg-12 -->
+                    <div class="col-lg-12">
+                        <div class="event-one__single">
+                            <div class="event-one__image">
+                                <div class="event-one__date">
+                                    <span>4</span>
+                                    矫正画布
+                                </div><!-- /.event-one__date -->
+                                <div class="event-one__image-box">
+                                    <div class="event-one__image-inner">
+                                        <img src="/images/event/draw04.png" alt="">
+                                    </div><!-- /.event-one__image-inner -->
+                                </div><!-- /.event-one__image-box -->
+                            </div><!-- /.event-one__image -->
+                            <div class="event-one__content">
+
+                                <p>正其经纬</p>
+                            </div><!-- /.event-one__content -->
+
+                        </div><!-- /.event-one__single -->
+                    </div><!-- /.col-lg-12 -->
+                    <div class="col-lg-12">
+                        <div class="event-one__single">
+                            <div class="event-one__image">
+                                <div class="event-one__date">
+                                    <span>5</span>
+                                    打线
+                                </div><!-- /.event-one__date -->
+                                <div class="event-one__image-box">
+                                    <div class="event-one__image-inner">
+                                        <img src="/images/event/draw05.png" alt="">
+                                    </div><!-- /.event-one__image-inner -->
+                                </div><!-- /.event-one__image-box -->
+                            </div><!-- /.event-one__image -->
+                            <div class="event-one__content">
+
+                                <p>画出主要的定位线。其中有边线、中心垂直线、两条对角线和其他任何需要标出的轮廓线。</p>
+                            </div><!-- /.event-one__content -->
+
+                        </div><!-- /.event-one__single -->
+                    </div><!-- /.col-lg-12 -->
+                    <div class="col-lg-12">
+                        <div class="event-one__single">
+                            <div class="event-one__image">
+                                <div class="event-one__date">
+                                    <span>6</span>
+                                    勾草图
+                                </div><!-- /.event-one__date -->
+                                <div class="event-one__image-box">
+                                    <div class="event-one__image-inner">
+                                        <img src="/images/event/draw06.png" alt="">
+                                    </div><!-- /.event-one__image-inner -->
+                                </div><!-- /.event-one__image-box -->
+                            </div><!-- /.event-one__image -->
+                            <div class="event-one__content">
+
+                                <p>用炭笔画出佛像的素描草图“白画”之后，再用墨勾成墨线（墨线草图即线描草图称“黑画”）。</p>
+                            </div><!-- /.event-one__content -->
+
+                        </div><!-- /.event-one__single -->
+                    </div><!-- /.col-lg-12 -->
+                    <div class="col-lg-12">
+                        <div class="event-one__single">
+                            <div class="event-one__image">
+                                <div class="event-one__date">
+                                    <span>7</span>
+                                    上色
+                                </div><!-- /.event-one__date -->
+                                <div class="event-one__image-box">
+                                    <div class="event-one__image-inner">
+                                        <img src="/images/event/draw07.png" alt="">
+                                    </div><!-- /.event-one__image-inner -->
+                                </div><!-- /.event-one__image-box -->
+                            </div><!-- /.event-one__image -->
+                            <div class="event-one__content">
+
+                                <p>根据画面描绘的水泊、岩石、山丘、云雾等景物的不同，在不同的景物上涂上相应的颜色。一次只上一种色，先上浅色，后上深色。绘佛像时，先绘莲花座，再画布饰，最后画佛身。画背景时，先浅色后深色。</p>
+                            </div><!-- /.event-one__content -->
+
+                        </div><!-- /.event-one__single -->
+                    </div><!-- /.col-lg-12 -->
+                    <div class="col-lg-12">
+                        <div class="event-one__single">
+                            <div class="event-one__image">
+                                <div class="event-one__date">
+                                    <span>8</span>
+                                    勾线
+                                </div><!-- /.event-one__date -->
+                                <div class="event-one__image-box">
+                                    <div class="event-one__image-inner">
+                                        <img src="/images/event/draw08.png" alt="">
+                                    </div><!-- /.event-one__image-inner -->
+                                </div><!-- /.event-one__image-box -->
+                            </div><!-- /.event-one__image -->
+                            <div class="event-one__content">
+
+                                <p>把上面所说的部分画完后，用金色画衣服上的图案（这些金色图案称“金画”）。一些画面装饰和画面其他地方也用各色线条来勾边。</p>
+                            </div><!-- /.event-one__content -->
+
+                        </div><!-- /.event-one__single -->
+                    </div><!-- /.col-lg-12 -->
+                    <div class="col-lg-12">
+                        <div class="event-one__single">
+                            <div class="event-one__image">
+                                <div class="event-one__date">
+                                    <span>9</span>
+                                    开脸
+                                </div><!-- /.event-one__date -->
+                                <div class="event-one__image-box">
+                                    <div class="event-one__image-inner">
+                                        <img src="/images/event/draw09.png" alt="">
+                                    </div><!-- /.event-one__image-inner -->
+                                </div><!-- /.event-one__image-box -->
+                            </div><!-- /.event-one__image -->
+                            <div class="event-one__content">
+
+                                <p>开眉眼包括画眼睛、嘴唇、鼻孔、手足指甲等，是唐卡绘制过程中最后一道工序，也是最重要的一步，一幅唐卡的成败，往往取决于眉眼开得是否成功。所以部分老艺人将开眉眼的功夫当作绝技，单脉相传，不轻易示人。按传统习俗，开眼要选良辰吉日。开好眉眼，就能起到画龙点睛的作用，同时预示着一幅唐卡的最终竣工。</p>
+                            </div><!-- /.event-one__content -->
+
+                        </div><!-- /.event-one__single -->
+                    </div><!-- /.col-lg-12 -->
+                </div><!-- /.row -->
+
+
+            </div><!-- /.container -->
+        </section><!-- /.event-one -->
+
+
+        <footer class="site-footer">
+
+            <div class="site-footer__bottom">
+                <div class="container">
+                    <div class="inner-container">
+                        <p>&copy; Copyright 2021 Visualization Institute All Rights Reserved</p>
+                        <a href="/resource/index" class="site-footer__bottom-logo">
+                            <img src="/images/team/logo-1.png" alt="">
+                        </a>
+                        <div class="site-footer__bottom-links">
+                            <a href="#">Terms & conditions</a>
+                            <a href="#">Privacy policy & Terms of use</a>
+                        </div><!-- /.site-footer__bottom-links -->
+                    </div><!-- /.inner-container -->
+                </div><!-- /.container -->
+            </div><!-- /.site-footer__bottom -->
+        </footer><!-- /.site-footer -->
+    </div><!-- /.page-wrapper -->
+
+    <div class="search-popup">
+        <div class="search-popup__overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.search-popup__overlay -->
+        <div class="search-popup__inner">
+            <form action="#" class="search-popup__form">
+                <input type="text" name="search" placeholder="Type here to Search....">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div><!-- /.search-popup__inner -->
+    </div><!-- /.search-popup -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- Template JS -->
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/bootstrap-datepicker.min.js"></script>
+    <script src="/js/bootstrap-select.min.js"></script>
+    <script src="/js/isotope.js"></script>
+    <script src="/js/jquery.ajaxchimp.min.js"></script>
+    <script src="/js/jquery.counterup.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/TweenMax.min.js"></script>
+    <script src="/js/waypoints.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/jquery.lettering.min.js"></script>
+    <script src="/js/jquery.circleType.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="/js/theme.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>唐卡</title>
+    <link rel="stylesheet" href="/css/dmaku.css">
+</head>
+<body>
+    <div class="dowebok" id="dowebok">
+        <div class="form-container sign-up-container">
+            <form class="layui-form" action="#">
+                <h1>注册</h1>
+                <input type="text" name="username" class="layui-input" placeholder="账号" title="账号以字母开头，由英文字母和数字组成的6-20位字符">
+                <input type="password" name="password" class="layui-input" placeholder="密码" title="密码必须包含大小写字母和数字，可以使用特殊字符，长度在8-10之间">
+                <input type="password" name="rpassword" class="layui-input" placeholder="确认密码" title="两次输入密码须一致">
+                <button class="layui-btn" lay-submit lay-filter="userRegist">注册</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form class="layui-form">
+                <h1>登录</h1>
+                <input type="text" name="username" class="layui-input" placeholder="账号">
+                <input type="password" name="password" class="layui-input" placeholder="密码">
+                <a href="#">忘记密码？</a>
+                <button type="button" class="layui-btn" lay-submit="lay-submi" lay-filter="userlogin">登录</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>已有帐号？</h1>
+                    <p>请使用您的帐号进行登录</p>
+                    <button class="ghost" id="signIn">登录</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>没有帐号？</h1>
+                    <p>立即注册加入我们，和我们一起开始旅程吧</p>
+                    <button class="ghost" id="signUp">注册</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/dmaku.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/layui/layui.js"></script>
+    <style>
+.copyrights{text-indent:-9999px;height:0;line-height:0;font-size:0;overflow:hidden;}
+</style>
+</body>
+<script type="text/javascript">
+    layui.use([ 'layer', 'form', 'jquery' ], function() {
+        var layer = layui.layer;
+        var form = layui.form;
+        var $ = layui.jquery;
+        //提交注册表单
+        form.on('submit(userRegist)', function(data) {
+            console.log(data.field);
+            var username = data.field.username;
+            var password = data.field.password;
+            var rpassword = data.field.rpassword;
+            if(password != rpassword){
+                layer.msg('两次密码输入不一致', {
+                    icon : 5
+                });
+                return false;
+            }else if(!/^[a-zA-Z][\w\-]{5,19}$/.test(username)){
+                layer.msg('您输入的用户名不合法', {
+                    icon : 5
+                });
+                return false;
+            }else if (password.length<6 || password.length>20 || password == "" || !/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$/.test(password)){
+                layer.msg('您输入的密码不合法', {
+                    icon : 5
+                });
+                return false;
+            }
+            $.post('user/regist', data.field, function(flag) {
+                if(flag == 1){
+                    layer.msg("用户名已存在")
+                }else{
+                    layer.msg("注册成功")
+                    window.location.href = "/login"
+                }
+            })
+
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+        //提交登录表单
+        form.on('submit(userlogin)', function(data) {
+            console.log(data.field);
+            var username = data.field.username;
+            if (username == ""){
+                layer.msg('账号不能为空', {
+                    icon : 5
+                });
+                return false;
+            }
+            $.post('user/login', data.field, function(flag) {
+                if (flag == '-2') {
+                    layer.msg('此用户不存在!', {
+                        icon : 5
+                    });
+                } else if (flag == '-1') {
+                    layer.msg('用户密码输入不正确', {
+                        icon : 5
+                    });
+                } else if (flag == '0') {
+                    window.location.href = "super_index.html";
+                } else if (flag == '1') {
+                    window.location.href = "admin_index.html";
+                } else if (flag == '2') {
+                    window.location.href = "index.html";
+                }
+            })
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+
+    })
+</script>
+</html>

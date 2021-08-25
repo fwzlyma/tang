@@ -1,0 +1,519 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>唐卡展示空间</title>
+
+    <!-- Fonts URL -->
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700%7CPlayfair+Display:400,500,600,700,800,900%7CWork+Sans:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="/css/magnific-popup.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/hover-min.css">
+    <link rel="stylesheet" href="/css/muzex-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+
+
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div><!-- /.preloader -->
+
+    <div class="page-wrapper">
+        <nav class="main-nav-one stricky">
+            <div class="container">
+                <div class="inner-container">
+                    <div class="logo-box">
+                        <a href="/resource/index">
+                            <img src="/images/team/logo-2.png" alt="" width="160">
+                        </a>
+                        <a href="#" class="side-menu__toggler"><i class="muzex-icon-menu"></i></a>
+                    </div><!-- /.logo-box -->
+                    <div class="main-nav__main-navigation">
+                        <ul class="main-nav__navigation-box">
+                            <li >
+                                <a href="/resource/index">首页</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="/resource/about">介绍</a>
+                                <ul>
+                                    <li><a href="/resource/toAbout">历史</a></li>
+                                    <li><a href="/resource/toMembership">科普</a></li>
+                                    <li><a href="/resource/toVenue">流派</a></li>
+                                    <li><a href="/resource/toEvent2">绘制</a></li>
+                                    <li><a href="/resource/toEvent1">装裱</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#">唐卡类别</a>
+                                <ul>
+                                    <li><a href="/resourceClassType/toAllType">全部类型</a></li>
+                                    <li><a href="/resource/resourceListMain">唐卡网格</a></li>
+                                </ul>
+                            </li>
+                        </ul><!-- /.main-nav__navigation-box -->
+                    </div><!-- /.main-nav__main-navigation -->
+                    <div class="main-nav__right">
+                        <a href="#" class="search-popup__toggler"><i class="muzex-icon-search"></i></a>
+                    </div><!-- /.main-nav__right -->
+                </div><!-- /.inner-container -->
+            </div><!-- /.container -->
+        </nav><!-- /.main-nav-one -->
+        <!-- Banner Section -->
+        <section class="banner-section">
+            <div class="banner-carousel thm__owl-carousel owl-theme owl-carousel" data-options='{"loop": true, "items": 1, "margin": 0, "dots": false, "nav": true, "animateOut": &quot;fadeOut&quot;, "animateIn": &quot;fadeIn&quot;, "active": true, "smartSpeed": 1000, "autoplay": true, "autoplayTimeout": 6000, "autoplayHoverPause": false}'>
+                <!-- Slide Item -->
+                <div class="slide-item">
+                    <div class="image-layer lazy-image" style="background-image: url('/images/main-slider/01.jpg');"></div>
+
+                    <div class="container">
+                        <div class="content-box text-center">
+                            <h2>探索<br>唐卡的奥秘</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide Item -->
+                <div class="slide-item">
+                    <div class="image-layer lazy-image" style="background-image: url('/images/main-slider/02.jpg');"></div>
+
+                    <div class="container">
+                        <div class="content-box text-center">
+                            <h2>探索<br>唐卡的奥秘</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide Item -->
+                <div class="slide-item">
+                    <div class="image-layer lazy-image" style="background-image: url('/images/main-slider/03.jpg');"></div>
+
+                    <div class="container">
+                        <div class="content-box text-center">
+                            <h2>探索<br>唐卡的奥秘</h2>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!--End Banner Section -->
+
+        <div class="about-cta__wrapper">
+            <section class="cta-two">
+                <div class="container">
+                    <div class="inner-container wow fadeInUp" data-wow-duration="1500ms">
+                    </div><!-- /.inner-container -->
+                </div><!-- /.container -->
+            </section><!-- /.cta-two -->
+
+            <section class="about-one">
+                <div class="container">
+                    <img src="/images/shapes/about-sculpture-1-1.png" alt="" class="about-one__moc">
+                    <div class="block-title">
+                        <p>关于唐卡</p>
+                        <h3>唐卡艺术</h3>
+                    </div><!-- /.block-title -->
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <p class="about-one__highlighted-text">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;唐卡（Thang-ga）也叫唐嘎，唐喀，系藏文音译，指用彩缎装裱后悬挂供奉的宗教卷轴画。
+                            </p><!-- /.about-one__highlighted-text -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4">
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;唐卡是藏族文化中一种独具特色的绘画艺术形式。具有鲜明的民族特点、浓郁的宗教色彩和独特的艺术风格，用明亮的色彩描绘出神圣的佛的世界；颜料传统上是全部采用金、银、珍珠、玛瑙、珊瑚、松石、孔雀石、朱砂等珍贵的矿物宝石和藏红花、大黄、蓝靛等植物为颜料以示其神圣。 </p>
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4">
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这些天然原料保证了所绘制的唐卡色泽鲜艳，璀璨夺目，虽经几百年的岁月，仍是色泽艳丽明亮。因此被誉为中国民族绘画艺术的珍品，被称为藏族的”百科全书”也是中华民族民间艺术中弥足珍贵的非物质文化遗产。</p>
+                        </div><!-- /.col-lg-4 -->
+                    </div><!-- /.row -->
+                    <div class="row justify-content-end">
+                        <div class="col-lg-8">
+                            <div class="about-one__feature">
+                                <h3>基本信息</h3>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    唐卡是藏族文化中一种独具特色的绘画艺术形式，题材内容涉及藏族的历史、政治、文化和社会生活等诸多领域，传世唐卡大都是藏传佛教和本教作品。长则需要十余年。</p>
+                                <div class="row">
+                                    <div class="col-xl-5 col-lg-6 col-md-4">
+                                        <ul class="list-unstyled about-one__feature-list">
+                                            <li>中文名：唐卡</li>
+                                            <li>定义：用彩绸装裱后悬挂的宗教卷轴画</li>
+                                            <li>遗产类别：民间美术</li>
+                                        </ul><!-- /.list-unstyled -->
+                                    </div><!-- /.col-lg-5 -->
+                                    <div class="col-xl-4 col-lg-6 col-md-4">
+                                        <ul class="list-unstyled about-one__feature-list">
+                                            <li>外文名：Tang—ga</li>
+                                            <li>申报地区：西藏自治区</li>
+                                            <li>非遗级别：国家级</li>
+                                        </ul><!-- /.list-unstyled -->
+                                    </div><!-- /.col-lg-4 -->
+                                    <div class="col-xl-3 col-lg-6 col-md-4">
+                                        <ul class="list-unstyled about-one__feature-list">
+                                            <li>别名：唐嘎、唐咯</li>
+                                            <li>批准时间：2006年</li>
+                                            <li>遗产编号：VII-14</li>
+                                        </ul><!-- /.list-unstyled -->
+                                    </div><!-- /.col-lg-3 -->
+                                </div><!-- /.row -->
+                            </div><!-- /.about-one__feature -->
+                        </div><!-- /.col-lg-8 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </section><!-- /.about-one -->
+        </div><!-- /.about-cta__wrapper -->
+
+        <section class="exhibition-one">
+            <div class="container">
+                <div class="block-title-two text-center">
+                    <span class="block-title-two__line"></span><!-- /.block-title-two__line -->
+                    <p>展示</p>
+                    <h3>唐卡</h3>
+                </div><!-- /.block-title-two -->
+                <div class="row high-gutter">
+                    <div class="col-lg-4">
+                        <div class="exhibition-one__single">
+                            <div class="exhibition-one__image">
+                                <img src="/images/exhibition/1.jpg" alt="">
+                            </div>
+                        </div><!-- /.exhibition-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <div class="exhibition-one__single">
+                            <div class="exhibition-one__image">
+                                <img src="/images/exhibition/2.jpg" alt="">
+                            </div>
+                        </div><!-- /.exhibition-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <div class="exhibition-one__single">
+                            <div class="exhibition-one__image">
+                                <img src="/images/exhibition/3.jpg" alt="">
+                            </div><!-- /.exhibition-one__image -->
+                        </div><!-- /.exhibition-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <div class="exhibition-one__single">
+                            <div class="exhibition-one__image">
+                                <img src="/images/exhibition/4.jpg" alt="">
+                            </div>
+                        </div><!-- /.exhibition-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <div class="exhibition-one__single">
+                            <div class="exhibition-one__image">
+                                <img src="/images/exhibition/5.jpg" alt="">
+                            </div>
+                        </div><!-- /.exhibition-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <div class="exhibition-one__single">
+                            <div class="exhibition-one__image">
+                                <img src="/images/exhibition/6.jpg" alt="">
+                            </div><!-- /.exhibition-one__image -->
+                        </div><!-- /.exhibition-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+
+            </div><!-- /.container -->
+
+        </section><!-- /.exhibition-one -->
+
+        <section class="collection-one" style="background-image: url(/images/shapes/collection-bg-1-1.jpg);">
+            <div class="container">
+                <div class="collection-one__top">
+                    <div class="block-title">
+                        <p>类别</p>
+                        <h3>艺术流派</h3>
+                    </div><!-- /.block-title -->
+                    <div class="more-post__block">
+                    </div><!-- /.more-post__block -->
+                </div><!-- /.collection-one__top -->
+            </div><!-- /.container -->
+
+            <div class="collection-one__carousel thm__owl-carousel owl-theme owl-carousel" data-options='{
+        "loop": true, "autoplay": true, "autoplayTimeout": 5000, "autoplayHoverPause": true, "smartSpeed": 700, "items": 3, "margin": 100, "dots": false, "nav": false, "responsive": { 
+            "0": { "items": 1, "margin": 0 },
+            "625": { "items": 2, "margin": 30 },
+            "767": { "items": 2, "margin": 30 },
+            "991": { "items": 2, "margin": 30},  "1199": { "margin": 30, "items": 3}, "1366": { "margin": 50, "items": 3 }, "1440": { "margin": 50, "items": 3 }, "1750": { "items": 3, "margin": 70 }, "1920": { "items": 3, "margin": 100 } }
+    }'>
+                <div class="item">
+                    <div class="collection-one__single">
+                        <img src="/images/collection/1.jpg" alt="">
+                        <div class="collection-one__content">
+
+                            <h3><a href="/resource/toVenue">尼泊尔画派</a></h3>
+                        </div><!-- /.collection-one__content -->
+                    </div><!-- /.collection-one__single -->
+                </div><!-- /.item -->
+                <div class="item">
+                    <div class="collection-one__single">
+                        <img src="/images/collection/2.jpg" alt="">
+                        <div class="collection-one__content">
+
+                            <h3><a href="/resource/toVenue">齐岗画派</a></h3>
+                        </div><!-- /.collection-one__content -->
+                    </div><!-- /.collection-one__single -->
+                </div><!-- /.item -->
+                <div class="item">
+                    <div class="collection-one__single">
+                        <img src="/images/collection/3.jpg" alt="">
+                        <div class="collection-one__content">
+
+                            <h3><a href="/resource/toVenue">勉唐画派</a></h3>
+                        </div><!-- /.collection-one__content -->
+                    </div><!-- /.collection-one__single -->
+                </div><!-- /.item -->
+                <div class="item">
+                    <div class="collection-one__single">
+                        <img src="/images/collection/4.jpg" alt="">
+                        <div class="collection-one__content">
+
+                            <h3><a href="/resource/toVenue">钦则画派</a></h3>
+                        </div><!-- /.collection-one__content -->
+                    </div><!-- /.collection-one__single -->
+                </div><!-- /.item -->
+                <div class="item">
+                    <div class="collection-one__single">
+                        <img src="/images/collection/5.jpg" alt="">
+                        <div class="collection-one__content">
+
+                            <h3><a href="/resource/toVenue">噶玛嘎孜画派</a></h3>
+                        </div><!-- /.collection-one__content -->
+                    </div><!-- /.collection-one__single -->
+                </div><!-- /.item -->
+                <div class="item">
+                    <div class="collection-one__single">
+                        <img src="/images/collection/6.jpg" alt="">
+                        <div class="collection-one__content">
+
+                            <h3><a href="/resource/toVenue">新勉画派</a></h3>
+                        </div><!-- /.collection-one__content -->
+                    </div><!-- /.collection-one__single -->
+                </div><!-- /.item -->
+
+            </div><!-- /.collection-one__carousel thm__owl-carousel owl-theme -->
+        </section><!-- /.collection-one -->
+
+        <section class="featured-collection">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="featured-collection__left">
+                            <div class="featured-collection__image">
+                                <img src="/images/resources/feature-1.jpg" alt="">
+                            </div><!-- /.featured-collection__image -->
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;传统唐卡的绘制要求严苛、程序极为复杂，必须按照经书中的仪轨及上师的要求进行，包括绘前仪式、制作画布、构图起稿、着色染色、勾线定型、铺金描银、开眼、缝裱开光等一整套工艺程序。</p>
+<!--                            <a href="collection-grid.html" class="thm-btn featured-collection__btn">Explore Collection</a>-->
+                            <!-- /.thm-btn featured-collection__btn -->
+                        </div><!-- /.featured-collection__left -->
+                    </div><!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                        <div class="featured-collection__right">
+                            <div class="block-title">
+                                <p>收藏</p>
+                                <h3>精选系列</h3>
+                            </div><!-- /.block-title -->
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;制作一幅唐卡用时较长，短则半年完成，长则需要十余年。</p>
+                            <div class="featured-collection__image">
+                                <img src="/images/resources/feature-2.jpg" alt="">
+                            </div><!-- /.featured-collection__image -->
+                        </div><!-- /.featured-collection__right -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.featured-collection -->
+
+        <section class="event-one">
+            <img src="/images/shapes/event-sculpture-1-1.png" alt="" class="event-one__moc">
+            <div class="container">
+                <div class="block-title-two text-center">
+                    <span class="block-title-two__line"></span><!-- /.block-title-two__line -->
+                    <p>绘制揭秘</p>
+                    <h3>部分流程</h3>
+                </div><!-- /.block-title-two -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="event-one__single">
+                            <div class="event-one__image">
+                                <div class="event-one__date">
+                                    <span>1</span>
+
+                                </div><!-- /.event-one__date -->
+                                <div class="event-one__image-box">
+                                    <div class="event-one__image-inner">
+                                        <img src="/images/event/draw01.png" alt="">
+                                    </div><!-- /.event-one__image-inner -->
+                                </div><!-- /.event-one__image-box -->
+                            </div><!-- /.event-one__image -->
+                            <div class="event-one__content">
+                                <h3><a href="/resource/toEvent2">选布</a></h3>
+                                <p>画布一般是浅色画布，不要太厚太硬，画布太厚太硬容易使颜料剥落和皱裂。最合适的画布是织工细密的纯白府绸或棉布，没有图案的白丝绸做画布也非常合适。有的唐卡尺幅很大，只能把几块画布用非常细密的针脚缝合在一起，缝好的两块布的接缝不能有碍于唐卡画面的完整。</p>
+                            </div><!-- /.event-one__content -->
+                            <div class="event-one__btn-block">
+                                <a href="/resource/toEvent2" class="thm-btn event-one__btn">更多</a>
+                            </div><!-- /.event-one__btn-block -->
+                        </div><!-- /.event-one__single -->
+                    </div><!-- /.col-lg-12 -->
+                    <div class="col-lg-12">
+                        <div class="event-one__single">
+                            <div class="event-one__image">
+                                <div class="event-one__date">
+                                    <span>6</span>
+
+                                </div><!-- /.event-one__date -->
+                                <div class="event-one__image-box">
+                                    <div class="event-one__image-inner">
+                                        <img src="/images/event/draw06.png" alt="">
+                                    </div><!-- /.event-one__image-inner -->
+                                </div><!-- /.event-one__image-box -->
+                            </div><!-- /.event-one__image -->
+                            <div class="event-one__content">
+                                <h3><a href="/resource/toEvent2">勾草图</a></h3>
+                                <p>用炭笔画出佛像的素描草图“白画”之后，再用墨勾成墨线（墨线草图即线描草图称“黑画”）。</p>
+                            </div><!-- /.event-one__content -->
+                            <div class="event-one__btn-block">
+                                <a href="/resource/toEvent2" class="thm-btn event-one__btn">更多</a>
+                            </div><!-- /.event-one__btn-block -->
+                        </div><!-- /.event-one__single -->
+                    </div><!-- /.col-lg-12 -->
+                    <div class="col-lg-12">
+                        <div class="event-one__single">
+                            <div class="event-one__image">
+                                <div class="event-one__date">
+                                    <span>7</span>
+
+                                </div><!-- /.event-one__date -->
+                                <div class="event-one__image-box">
+                                    <div class="event-one__image-inner">
+                                        <img src="/images/event/draw07.png" alt="">
+                                    </div><!-- /.event-one__image-inner -->
+                                </div><!-- /.event-one__image-box -->
+                            </div><!-- /.event-one__image -->
+                            <div class="event-one__content">
+                                <h3><a href="/resource/toEvent2">上色</a></h3>
+                                <p>根据画面描绘的水泊、岩石、山丘、云雾等景物的不同，在不同的景物上涂上相应的颜色。一次只上一种色，先上浅色，后上深色。绘佛像时，先绘莲花座，再画布饰，最后画佛身。画背景时，先浅色后深色。</p>
+                            </div><!-- /.event-one__content -->
+                            <div class="event-one__btn-block">
+                                <a href="/resource/toEvent2" class="thm-btn event-one__btn">更多</a>
+                            </div><!-- /.event-one__btn-block -->
+                        </div><!-- /.event-one__single -->
+                    </div><!-- /.col-lg-12 -->
+                    <div class="col-lg-12">
+                        <div class="event-one__single">
+                            <div class="event-one__image">
+                                <div class="event-one__date">
+                                    <span>9</span>
+
+                                </div><!-- /.event-one__date -->
+                                <div class="event-one__image-box">
+                                    <div class="event-one__image-inner">
+                                        <img src="/images/event/draw09.png" alt="">
+                                    </div><!-- /.event-one__image-inner -->
+                                </div><!-- /.event-one__image-box -->
+                            </div><!-- /.event-one__image -->
+                            <div class="event-one__content">
+                                <h3><a href="/resource/toEvent2">开脸</a></h3>
+                                <p>开眉眼包括画眼睛、嘴唇、鼻孔、手足指甲等，是唐卡绘制过程中最后一道工序，也是最重要的一步，一幅唐卡的成败，往往取决于眉眼开得是否成功。所以部分老艺人将开眉眼的功夫当作绝技，单脉相传，不轻易示人。按传统习俗，开眼要选良辰吉日。开好眉眼，就能起到画龙点睛的作用，同时预示着一幅唐卡的最终竣工</p>
+                            </div><!-- /.event-one__content -->
+                            <div class="event-one__btn-block">
+                                <a href="/resource/toEvent2" class="thm-btn event-one__btn">更多</a>
+                            </div><!-- /.event-one__btn-block -->
+                        </div><!-- /.event-one__single -->
+                    </div><!-- /.col-lg-12 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.event-one -->
+
+        <footer class="site-footer">
+            <div class="site-footer__bottom">
+                <div class="container">
+                    <div class="inner-container">
+                        <p>&copy; Copyright 2021 Visualization Institute All Rights Reserved</p>
+                        <a href="/resource/index" class="site-footer__bottom-logo">
+                            <img src="/images/team/logo-1.png" alt="">
+                        </a>
+                        <div class="site-footer__bottom-links">
+                            <a href="#">Terms & conditions</a>
+                            <a href="#">Privacy policy & Terms of use</a>
+                        </div><!-- /.site-footer__bottom-links -->
+                    </div><!-- /.inner-container -->
+                </div><!-- /.container -->
+            </div><!-- /.site-footer__bottom -->
+        </footer><!-- /.site-footer -->
+    </div><!-- /.page-wrapper -->
+
+    <div class="search-popup">
+        <div class="search-popup__overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.search-popup__overlay -->
+        <div class="search-popup__inner">
+            <form action="#" class="search-popup__form">
+                <input type="text" name="search" placeholder="类型搜索....">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div><!-- /.search-popup__inner -->
+    </div><!-- /.search-popup -->
+
+
+    <div class="side-menu__block">
+
+        <a href="#" class="side-menu__toggler side-menu__close-btn"><i class="fa fa-times"></i>
+
+    </div><!-- /.side-menu__block -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- Template JS -->
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/bootstrap-datepicker.min.js"></script>
+    <script src="/js/bootstrap-select.min.js"></script>
+    <script src="/js/isotope.js"></script>
+    <script src="/js/jquery.ajaxchimp.min.js"></script>
+    <script src="/js/jquery.counterup.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/TweenMax.min.js"></script>
+    <script src="/js/waypoints.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/jquery.lettering.min.js"></script>
+    <script src="/js/jquery.circleType.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="/js/theme.js"></script>
+<style>
+.copyrights{text-indent:-9999px;height:0;line-height:0;font-size:0;overflow:hidden;}
+</style>
+<!--<div class="copyrights" id="links20210126">-->
+<!--	Collect from <a href="http://www.cssmoban.com/"  title="网站模板">模板之家</a>-->
+<!--	<a href="https://www.chazidian.com/"  title="查字典">查字典</a>-->
+<!--</div>-->
+</body>
+
+</html>
