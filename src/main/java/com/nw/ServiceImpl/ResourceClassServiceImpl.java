@@ -61,8 +61,9 @@ public class ResourceClassServiceImpl implements ResourceClassService {
      */
     @Override
     @Transactional(rollbackFor=Exception.class)
-    public int removeResourceClass(long id) {
-        return resourceClassRepository.deleteById(id);
+    public boolean removeResourceClass(long id) {
+        resourceClassRepository.deleteById(id);
+        return true;
     }
 
     /**

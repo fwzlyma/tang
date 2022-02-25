@@ -40,6 +40,13 @@ public interface ResourceService {
      */
     public int findCountByTypeId(Long id);
     /**
+     * 根据类型名->类型->唐卡列表
+     * @param typename
+     * @param pageable
+     * @return
+     */
+    public List<Resource> findResourceByTypeName(String typename, Pageable pageable);
+    /**
      * 添加唐卡
      * @param resource
      * @return

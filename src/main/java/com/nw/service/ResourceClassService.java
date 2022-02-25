@@ -49,7 +49,7 @@ public interface ResourceClassService {
      * @param id
      * @return
      */
-    public int removeResourceClass(long id);
+    public boolean removeResourceClass(long id);
 
     /**
      * 更新类型信息

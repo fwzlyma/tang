@@ -16,8 +16,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
-
 /**
  * @Author : baitao
  * @Time : 2021/8/21 20:23
@@ -70,9 +68,16 @@ public class ResourceClassController {
      * @return
      */
     @RequestMapping("/addClass")
-    public ResourceClass addResourceClass(ResourceClass resourceClass){
-
-        return resourceClassService.addResourceClass(resourceClass);
+    @ResponseBody
+    public String  addResourceClass(ResourceClass resourceClass){
+        String[] split = resourceClass.getUploadpath().split("\\\\");
+        String path = "/" + split[split.length-3] + "/" + split[split.length-2] + "/" + split[split.length-1];
+        resourceClass.setUploadpath(path);
+        if(resourceClassService.addResourceClass(resourceClass)==null) {
+            return "0";
+        }else{
+            return "1";
+        }
     }
 
     /**
@@ -80,9 +85,15 @@ public class ResourceClassController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/removeClass",method =POST)
-    public int removeClass(@RequestParam("id")long id){
-        return resourceClassService.removeResourceClass(id);
+    @RequestMapping(value = "/removeClass")
+    @ResponseBody
+    public String removeClass(@RequestParam("id")long id){
+        boolean result=resourceClassService.removeResourceClass(id);
+        if(result){
+            return "1";
+        }else{
+            return "0";
+        }
     }
 
     /**
@@ -101,10 +112,24 @@ public class ResourceClassController {
      * @return
      */
     @RequestMapping("/updateClass")
-    public ResourceClass updateClass(ResourceClass resourceClass){
-//        resourceClass.setId(5L);
-//        resourceClass.setTypename("dhfjk");
-        return resourceClassService.updateResourceClass(resourceClass);
+    @ResponseBody
+    public String  updateClass(ResourceClass resourceClass){
+        // try表示获取的是绝对路径 即：修改了图片
+        try {
+            String[] split =resourceClass.getUploadpath().split("\\\\");
+            System.out.println(split);
+            String path = "/" + split[split.length-3] + "/" + split[split.length-2] + "/" + split[split.length-1];
+            resourceClass.setUploadpath(path);
+        }catch (Exception e){   // catch 表示获取的是相对路径  即：没有更换图片
+            resourceClass.setUploadpath(resourceClass.getUploadpath());
+        }finally {
+            if(resourceClassService.updateResourceClass(resourceClass) == null){
+                return "0";
+            }else{
+                return "1";
+            }
+        }
+
     }
 
     /**
@@ -114,6 +139,7 @@ public class ResourceClassController {
      * @return
      */
     @RequestMapping("/listClass")
+    @ResponseBody
     public Map<String, Object> listClass(@RequestParam(required = true)int page, @RequestParam(required = true)int limit ){
 
         Pageable pageable = PageRequest.of(page-1,limit);

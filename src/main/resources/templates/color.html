@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>唐卡上色</title>
+
+    <!-- Fonts URL -->
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700%7CPlayfair+Display:400,500,600,700,800,900%7CWork+Sans:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="../static/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../static/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="../static/css/magnific-popup.css">
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../static/css/animate.css">
+    <link rel="stylesheet" href="../static/css/hover-min.css">
+    <link rel="stylesheet" href="../static/css/muzex-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+
+
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div><!-- /.preloader -->
+    <div class="page-wrapper">
+
+
+        <nav class="main-nav-one stricky main-nav-one__home-two">
+            <div class="container">
+                <div class="inner-container">
+                    <div class="logo-box">
+                        <a href="/resource/index">
+                            <img src="../static/images/team/logo-2.png" alt="" width="160">
+                        </a>
+                        <a href="#" class="side-menu__toggler"><i class="muzex-icon-menu"></i></a>
+                    </div><!-- /.logo-box -->
+                    <div class="main-nav__main-navigation">
+                        <ul class="main-nav__navigation-box">
+                            <li >
+                                <a href="/resource/index">首页</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="/resource/about">介绍</a>
+                                <ul>
+                                    <li><a href="/resource/toAbout">历史</a></li>
+                                    <li><a href="/resource/toMembership">科普</a></li>
+                                    <li><a href="/resource/toVenue">流派</a></li>
+                                    <li><a href="/resource/toEvent2">绘制</a></li>
+                                    <li><a href="/resource/toEvent1">装裱</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#">唐卡类别</a>
+                                <ul>
+                                    <li><a href="/resourceClassType/toAllType">全部类型</a></li>
+                                    <li><a href="/resource/resourceListMain">唐卡网格</a></li>
+                                </ul>
+                            </li>
+                        </ul><!-- /.main-nav__navigation-box -->
+                    </div><!-- /.main-nav__main-navigation -->
+<!--                    <div class="main-nav__right">-->
+<!--                        <a href="#" class="search-popup__toggler"><i class="muzex-icon-search"></i></a>-->
+<!--                    </div>&lt;!&ndash; /.main-nav__right &ndash;&gt;-->
+                </div><!-- /.inner-container -->
+            </div><!-- /.container -->
+        </nav><!-- /.main-nav-one -->
+
+        <section class="page-header" style="background-image: url(../static/images/backgrounds/home-1.jpg);">
+            <div class="container">
+                <h2>绘制-上色</h2>
+            </div><!-- /.container -->
+        </section><!-- /.page-header -->
+
+
+        <section class="event-two event-two__event-1-page">
+            <div class="container">
+                <div class="event-two__single">
+                    <div class="row">
+                        <div class="col-lg-5 wow fadeInLeft" data-wow-duration="1500ms">
+                            <div class="event-two__image">
+                                <div class="event-two__image-inner">
+                                    <img src="../static/images/color/1.jpg" alt="" style="height: 370px; width: 450px;">
+                                </div><!-- /.event-two__image-inner -->
+                            </div><!-- /.event-two__image -->
+                        </div><!-- /.col-lg-5 -->
+                        <div class="col-lg-7 d-flex">
+                            <div class="my-auto">
+                                <div class="event-two__content">
+
+                                    <p>画师按顺序先对面积较大的衣饰进行着色，然后是天空、景物、地面，面部要到最后才上色。为使各部位颜色深浅有变化，着完色后就要对各种颜色进行加酚处理，使颜色有深浅明暗变化。
+                                    </p>
+
+                                </div><!-- /.event-two__content -->
+
+                            </div><!-- /.my-auto -->
+                        </div><!-- /.col-lg-7 -->
+                    </div><!-- /.row -->
+                </div><!-- /.event-two__single -->
+                <div class="event-two__single">
+                    <div class="row">
+                        <div class="col-lg-5 wow fadeInLeft" data-wow-duration="1500ms">
+                            <div class="event-two__image">
+                                <div class="event-two__image-inner">
+                                    <img src="../static/images/color/2.jpg" alt="" style="height: 370px; width: 450px;">
+                                </div><!-- /.event-two__image-inner -->
+                            </div>
+                        </div><!-- /.col-lg-5 -->
+                        <div class="col-lg-7 d-flex">
+                            <div class="my-auto">
+                                <div class="event-two__content">
+
+                                    <p>藏族传统绘画技法讲究用线条描绘形状, 用颜色来表现其面貌。就线描与颜色之间的关系而论, 藏族画家有这样的比喻“: 形态虽佳着色差, 如同美女着褴褛, 难现婀娜娇美体; 形劣色佳不足取,如同八旬涂脂粉, 难能打动贤者心。”这段话比较形象地总结出了形态和颜色之间的紧密关系。
+                                    </p>
+
+                                </div><!-- /.event-two__content -->
+
+                            </div><!-- /.my-auto -->
+                        </div><!-- /.col-lg-7 -->
+
+                    </div><!-- /.row -->
+                </div><!-- /.event-two__single -->
+                <div class="event-two__single">
+                    <div class="row">
+
+                        <div class="col-lg-5 wow fadeInLeft" data-wow-duration="1500ms">
+
+                            <div class="event-two__image">
+                                <div class="event-two__image-inner">
+                                    <img src="../static/images/color/3.jpg" alt="" style="height: 370px; width: 450px;">
+                                </div><!-- /.event-two__image-inner -->
+                            </div><!-- /.event-two__image -->
+                        </div><!-- /.col-lg-5 -->
+                        <div class="col-lg-7 d-flex">
+                            <div class="my-auto">
+                                <div class="event-two__content">
+
+                                    <p>不同历史时期的藏画专家们对线描与着色的关系进行了不懈的探索, 使二者的结合不断完善, 藏族绘画在把线描造型放在首位的同时更加注重色彩的作用, 从而大大丰富了藏画的表现力。
+                                    </p>
+
+                                </div><!-- /.event-two__content -->
+
+                            </div><!-- /.my-auto -->
+                        </div><!-- /.col-lg-7 -->
+
+
+                    </div><!-- /.row -->
+                </div><!-- /.event-two__single -->
+                <div class="event-two__single">
+                    <div class="row">
+                        <div class="col-lg-5 wow fadeInLeft" data-wow-duration="1500ms">
+                            <div class="event-two__image">
+                                <div class="event-two__image-inner">
+                                    <img src="../static/images/color/4.jpg" alt="" style="height: 370px; width: 450px;">
+                                </div><!-- /.event-two__image-inner -->
+                            </div><!-- /.event-two__image -->
+                        </div><!-- /.col-lg-5 -->
+                        <div class="col-lg-7 d-flex">
+                            <div class="my-auto">
+                                <div class="event-two__content">
+
+                                    <p>唐卡中色彩常被作为表现神佛容貌、性格的一种手段，不同的色彩表现出不同的含义，因此常以白色表现平静、和蔼、善良；红色和深蓝色表现强悍好斗、凶猛狰狞（愤怒相），出巧妙地把大块的红色、绿色、青色和蓝色并列使用；金色代表多种颜色，表现出一种神圣的气氛。
+                                    </p>
+
+                                </div><!-- /.event-two__content -->
+
+                            </div><!-- /.my-auto -->
+                        </div><!-- /.col-lg-7 -->
+                    </div><!-- /.row -->
+                </div><!-- /.event-two__single -->
+                <div class="event-two__single">
+                    <div class="row">
+                        <div class="col-lg-5 wow fadeInLeft" data-wow-duration="1500ms">
+                            <div class="event-two__image">
+                                <div class="event-two__image-inner">
+                                    <img src="../static/images/color/5.jpg" alt="" style="height: 370px; width: 450px;">
+                                </div><!-- /.event-two__image-inner -->
+                            </div><!-- /.event-two__image -->
+                        </div><!-- /.col-lg-5 -->
+                        <div class="col-lg-7 d-flex">
+                            <div class="my-auto">
+                                <div class="event-two__content">
+
+                                    <p>唐卡作品的主题丰富，涉及大量的佛教故事，颜色使用具有丰富多样性特点。唐卡的画师寻求在色彩的不断变化中，找准平衡点，将红、橙、黄等暖色作为人物形象色彩，在人物的周围会运用冷色调渲染，使画面更具张力。不同的色块会展现出不同的含义，画师运用对比色，来促使画面形成抗衡感，使整体画面更具和谐感。
+                                    </p>
+
+                                </div><!-- /.event-two__content -->
+
+                            </div><!-- /.my-auto -->
+                        </div><!-- /.col-lg-7 -->
+                    </div><!-- /.row -->
+                </div><!-- /.event-two__single -->
+            </div><!-- /.container -->
+        </section><!-- /.event-two -->
+
+        <footer class="site-footer">
+
+            <div class="site-footer__bottom">
+                <div class="container">
+                    <div class="inner-container">
+                        <p>&copy; Copyright 2021 Visualization Institute All Rights Reserved</p>
+                        <a href="/resource/index" class="site-footer__bottom-logo">
+                            <img src="../static/images/team/logo-1.png" alt="">
+                        </a>
+                        <div class="site-footer__bottom-links">
+                            <a href="#">Terms & conditions</a>
+                            <a href="#">Privacy policy & Terms of use</a>
+                        </div><!-- /.site-footer__bottom-links -->
+                    </div><!-- /.inner-container -->
+                </div><!-- /.container -->
+            </div><!-- /.site-footer__bottom -->
+        </footer><!-- /.site-footer -->
+    </div><!-- /.page-wrapper -->
+
+    <div class="search-popup">
+        <div class="search-popup__overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.search-popup__overlay -->
+        <div class="search-popup__inner">
+            <form action="#" class="search-popup__form">
+                <input type="text" name="search" placeholder="Type here to Search....">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div><!-- /.search-popup__inner -->
+    </div><!-- /.search-popup -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- Template JS -->
+
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/bootstrap-datepicker.min.js"></script>
+    <script src="../static/js/bootstrap-select.min.js"></script>
+    <script src="../static/js/isotope.js"></script>
+    <script src="../static/js/jquery.ajaxchimp.min.js"></script>
+    <script src="../static/js/jquery.counterup.min.js"></script>
+    <script src="../static/js/jquery.magnific-popup.min.js"></script>
+    <script src="../static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../static/js/jquery.validate.min.js"></script>
+    <script src="../static/js/owl.carousel.min.js"></script>
+    <script src="../static/js/TweenMax.min.js"></script>
+    <script src="../static/js/waypoints.min.js"></script>
+    <script src="../static/js/wow.min.js"></script>
+    <script src="../static/js/jquery.lettering.min.js"></script>
+    <script src="../static/js/jquery.circleType.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="../static/js/theme.js"></script>
+</body>
+
+</html>

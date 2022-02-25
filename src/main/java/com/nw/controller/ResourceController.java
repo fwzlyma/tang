@@ -1,10 +1,11 @@
 package com.nw.controller;
 
 import com.nw.po.Resource;
+import com.nw.po.ResourceClass;
 import com.nw.po.User;
+import com.nw.repository.ResourceClassRepository;
 import com.nw.repository.ResourceRepository;
 import com.nw.service.ResourceService;
-import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -14,11 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 /**
  * @Author : baitao
@@ -31,6 +31,8 @@ public class ResourceController {
     private ResourceService resourceService;
     @Autowired
     private ResourceRepository resourceRepository;
+    @Autowired
+    private ResourceClassRepository resourceClassRepository;
 
     /**
      * 跳转到唐卡列表
@@ -151,7 +153,7 @@ public class ResourceController {
      * 跳转至绘制页面
      * @return
      */
-    @RequestMapping("toEvent2")
+    @RequestMapping("/toEvent2")
     public String toEvent2(){
         return "event-2";
     }
@@ -160,9 +162,27 @@ public class ResourceController {
      * 跳转至装裱页面
      * @return
      */
-    @RequestMapping("toEvent1")
+    @RequestMapping("/toEvent1")
     public String toEvent1(){
         return "event-1";
+    }
+
+    /**
+     * 跳转至打线页面
+     * @return
+     */
+    @RequestMapping("/toDiagram")
+    public String toDiagram(){
+        return "diagram";
+    }
+
+    /**
+     * 跳转至上色页面
+     * @return
+     */
+    @RequestMapping("/toColor")
+    public String toColor(){
+        return "color";
     }
 
     /**
@@ -171,10 +191,21 @@ public class ResourceController {
      * @return
      */
     @RequestMapping("/addResource")
-    public Resource addResource(Resource resource){
-        User user=(User) SecurityUtils.getSubject().getSession().getAttribute("user");
-        resource.setUploader(user.getId());
-        return resourceService.addResource(resource);
+    @ResponseBody
+    public String addResource(HttpServletRequest request, Resource resource){
+        User loginUser = (User)request.getSession().getAttribute("LoginUser");
+        resource.setUploader(loginUser.getId());
+        resource.setType("图片");
+        // 设置上传路径
+        System.out.println("获取到的路径" + resource.getUploadpath());
+        String[] split = resource.getUploadpath().split("\\\\");
+        String path = "/" + split[split.length-3] + "/" + split[split.length-2] + "/" + split[split.length-1];
+        resource.setUploadpath(path);
+        if(resourceService.addResource(resource) == null){
+            return "0";
+        }else{
+            return "1";
+        }
 
     }
 
@@ -183,9 +214,15 @@ public class ResourceController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/removeResource",method = POST)
-    public boolean removeResource(@RequestParam("id")long id){
-        return resourceService.removeResource(id);
+    @RequestMapping(value = "/removeResource")
+    @ResponseBody
+    public String removeResource(@RequestParam("id")long id){
+        boolean result = resourceService.removeResource(id);
+        if(result){
+            return "1";
+        }else{
+            return "0";
+        }
     }
 
     /**
@@ -204,13 +241,32 @@ public class ResourceController {
      * @return
      */
     @RequestMapping("/updateResource")
-    public Resource updateResource(Resource resource){
-        return resourceService.updateResource(resource);
+    @ResponseBody
+    public String updateResource(HttpServletRequest request, Resource resource){
+        try{
+            User loginUser = (User)request.getSession().getAttribute("LoginUser");
+            resource.setUploader(loginUser.getId());
+            String[] split = resource.getUploadpath().split("\\\\");
+            String path = "/" + split[split.length-3] + "/" + split[split.length-2] + "/" + split[split.length-1];
+            resource.setUploadpath(path);
+            resource.setType("图片");
+        }catch (Exception e){
+            User loginUser = (User)request.getSession().getAttribute("LoginUser");
+            resource.setUploader(loginUser.getId());
+            resource.setType("图片");
+            resource.setUploadpath(resource.getUploadpath());
+        }finally {
+            if(resourceService.updateResource(resource) == null){
+                return "0";
+            }else{
+                return "1";
+            }
+        }
     }
 
 
     /**
-     * 遍历所有唐咯
+     * 遍历所有唐卡
      * @param page
      * @param limit
      * @return
@@ -237,16 +293,33 @@ public class ResourceController {
      * @return
      */
     @RequestMapping("/selectResourceBytype")
+    @ResponseBody
     public Map<String, Object> selectResource(@RequestParam(required = true)int page,@RequestParam(required = true)int limit, @RequestParam("type")String type){
-
+//        Pageable pageable =PageRequest.of(page-1,limit);
+//        long count=resourceRepository.countByType(type);
+//        List<Resource> lists=resourceRepository.getAllByType(type,pageable);
+//        Map<String,Object> result=new HashMap<String,Object>();
+//        result.put("msg","");
+//        result.put("count",count);
+//        result.put("code",0);
+//        result.put("data",lists);
+//        return result;
+//        System.out.println("进来了");
+//        System.out.println("aaaa"+type);
+        //方法1
+        System.out.println("进到搜索");
         Pageable pageable =PageRequest.of(page-1,limit);
-        long count=resourceRepository.countByType(type);
-        List<Resource> lists=resourceRepository.getAllByType(type,pageable);
+        //获取到唐卡列表
+        List<Resource> lists = resourceService.findResourceByTypeName(type, pageable);
+        ResourceClass resourceClass = resourceClassRepository.findResourceClassByTypename(type);
+        Long typeId = resourceClass == null?0L:resourceClass.getId();
+        long count=resourceRepository.countByType((String.valueOf(typeId)));
         Map<String,Object> result=new HashMap<String,Object>();
         result.put("msg","");
         result.put("count",count);
         result.put("code",0);
         result.put("data",lists);
+        System.out.println("输出result" + result);
         return result;
     }
 }

@@ -12,7 +12,6 @@ public interface ResourceClassRepository extends JpaRepository<ResourceClass, In
     @Query(value = "delete from resourceclass  where id in ?1",nativeQuery = true)
     int deleteByIds(long[] ids);
 
-    @Modifying
-    @Query(value = "delete from resourceclass  where id =?1",nativeQuery = true)
+
     int deleteById(long id);
 }

@@ -7,7 +7,7 @@
 	w		弹出层宽度（缺省调默认值）
 	h		弹出层高度（缺省调默认值）
 */
-function x_admin_show(title,url,w,h){
+function x_admin_show(title,url,w,h,data){
 	if (title == null || title == '') {
 		title=false;
 	};
@@ -29,7 +29,15 @@ function x_admin_show(title,url,w,h){
 		shadeClose: true,
 		shade:0.4,
 		title: title,
-		content: url
+		content: url,
+		success: function (layero, index) {
+			if (data){
+				// 获取子页面的iframe
+				var iframe = window['layui-layer-iframe' + index];
+				// 向子页面的全局函数child传参
+				iframe.child(data);
+			}
+		}
 	});
 }
 

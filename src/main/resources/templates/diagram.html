@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>唐卡线图</title>
+
+    <!-- Fonts URL -->
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700%7CPlayfair+Display:400,500,600,700,800,900%7CWork+Sans:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="../static/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../static/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="../static/css/magnific-popup.css">
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../static/css/animate.css">
+    <link rel="stylesheet" href="../static/css/hover-min.css">
+    <link rel="stylesheet" href="../static/css/muzex-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+
+
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div><!-- /.preloader -->
+    <div class="page-wrapper">
+
+
+        <nav class="main-nav-one stricky main-nav-one__home-two">
+            <div class="container">
+                <div class="inner-container">
+                    <div class="logo-box">
+                        <a href="/resource/index">
+                            <img src="../static/images/team/logo-2.png" alt="" width="160">
+                        </a>
+                        <a href="#" class="side-menu__toggler"><i class="muzex-icon-menu"></i></a>
+                    </div><!-- /.logo-box -->
+                    <div class="main-nav__main-navigation">
+                        <ul class="main-nav__navigation-box">
+                            <li >
+                                <a href="/resource/index">首页</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="/resource/about">介绍</a>
+                                <ul>
+                                    <li><a href="/resource/toAbout">历史</a></li>
+                                    <li><a href="/resource/toMembership">科普</a></li>
+                                    <li><a href="/resource/toVenue">流派</a></li>
+                                    <li><a href="/resource/toEvent2">绘制</a></li>
+                                    <li><a href="/resource/toEvent1">装裱</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#">唐卡类别</a>
+                                <ul>
+                                    <li><a href="/resourceClassType/toAllType">全部类型</a></li>
+                                    <li><a href="/resource/resourceListMain">唐卡网格</a></li>
+                                </ul>
+                            </li>
+                        </ul><!-- /.main-nav__navigation-box -->
+                    </div><!-- /.main-nav__main-navigation -->
+<!--                    <div class="main-nav__right">-->
+<!--                        <a href="#" class="search-popup__toggler"><i class="muzex-icon-search"></i></a>-->
+<!--                    </div>&lt;!&ndash; /.main-nav__right &ndash;&gt;-->
+                </div><!-- /.inner-container -->
+            </div><!-- /.container -->
+        </nav><!-- /.main-nav-one -->
+
+        <section class="page-header" style="background-image: url(../static/images/backgrounds/home-1.jpg);">
+            <div class="container">
+                <h2>绘制-打线</h2>
+            </div><!-- /.container -->
+        </section><!-- /.page-header -->
+
+
+        <section class="event-two event-two__event-1-page">
+<!--            <a href="/resource/toColor">-->
+                <h3 style="margin-left: 80%;" onclick="window.location='/resource/toColor'">上色效果</h3>
+<!--            </a>-->
+            <div class="container">
+                <div class="event-two__single">
+                    <div class="row">
+                        <div class="col-lg-5 wow fadeInLeft" data-wow-duration="1500ms">
+                            <div class="event-two__image">
+                                <div class="event-two__image-inner">
+                                    <img src="../static/images/diagram/1.jpg" alt="" style="height: 370px; width: 450px;">
+                                </div><!-- /.event-two__image-inner -->
+                            </div><!-- /.event-two__image -->
+                        </div><!-- /.col-lg-5 -->
+                        <div class="col-lg-7 d-flex">
+                            <div class="my-auto">
+                                <div class="event-two__content">
+                                    <p>线条的运用在每幅唐卡中都有不同的表现。有的刚劲坚实有力，有的挺秀流利，有的生动活泼，有的纤细繁复，有的朴素古拙。
+                                    </p>
+
+                                </div><!-- /.event-two__content -->
+
+                            </div><!-- /.my-auto -->
+                        </div><!-- /.col-lg-7 -->
+                    </div><!-- /.row -->
+                </div><!-- /.event-two__single -->
+                <div class="event-two__single">
+                    <div class="row">
+                        <div class="col-lg-5 wow fadeInLeft" data-wow-duration="1500ms">
+                            <div class="event-two__image">
+                                <div class="event-two__image-inner">
+                                    <img src="../static/images/diagram/2.jpg" alt="" style="height: 370px; width: 450px;">
+                                </div><!-- /.event-two__image-inner -->
+                            </div>
+                        </div><!-- /.col-lg-5 -->
+                        <div class="col-lg-7 d-flex">
+                            <div class="my-auto">
+                                <div class="event-two__content">
+
+                                    <p>在唐卡中，画师必须把白描勾得十分具体以后才能敷色。人物肉体的勾画，根据人物的动态、结构及肤色进行勾勒，几乎看不出痕迹。
+                                    </p>
+
+                                </div><!-- /.event-two__content -->
+
+                            </div><!-- /.my-auto -->
+                        </div><!-- /.col-lg-7 -->
+
+                    </div><!-- /.row -->
+                </div><!-- /.event-two__single -->
+                <div class="event-two__single">
+                    <div class="row">
+
+                        <div class="col-lg-5 wow fadeInLeft" data-wow-duration="1500ms">
+
+                            <div class="event-two__image">
+                                <div class="event-two__image-inner">
+                                    <img src="../static/images/diagram/3.jpg" alt="" style="height: 370px; width: 450px;">
+                                </div><!-- /.event-two__image-inner -->
+                            </div><!-- /.event-two__image -->
+                        </div><!-- /.col-lg-5 -->
+                        <div class="col-lg-7 d-flex">
+                            <div class="my-auto">
+                                <div class="event-two__content">
+
+                                    <p>而衣纹却随肢体的起伏变化而转折，以虚实确定疏密关系，表现出衣服随人物动作而变化的感觉。
+                                    </p>
+
+                                </div><!-- /.event-two__content -->
+
+                            </div><!-- /.my-auto -->
+                        </div><!-- /.col-lg-7 -->
+
+
+                    </div><!-- /.row -->
+                </div><!-- /.event-two__single -->
+                <div class="event-two__single">
+                    <div class="row">
+                        <div class="col-lg-5 wow fadeInLeft" data-wow-duration="1500ms">
+                            <div class="event-two__image">
+                                <div class="event-two__image-inner">
+                                    <img src="../static/images/diagram/4.jpg" alt="" style="height: 370px; width: 450px;">
+                                </div><!-- /.event-two__image-inner -->
+                            </div><!-- /.event-two__image -->
+                        </div><!-- /.col-lg-5 -->
+                        <div class="col-lg-7 d-flex">
+                            <div class="my-auto">
+                                <div class="event-two__content">
+
+                                    <p>衣纹飘带描法种类繁多，变化应用，无论微型唐卡或数丈巨幅唐卡，勾勒线条都十分认真，一丝不苟。
+                                    </p>
+
+                                </div><!-- /.event-two__content -->
+
+                            </div><!-- /.my-auto -->
+                        </div><!-- /.col-lg-7 -->
+                    </div><!-- /.row -->
+                </div><!-- /.event-two__single -->
+                <div class="event-two__single">
+                    <div class="row">
+                        <div class="col-lg-5 wow fadeInLeft" data-wow-duration="1500ms">
+                            <div class="event-two__image">
+                                <div class="event-two__image-inner">
+                                    <img src="../static/images/diagram/5.jpg" alt="" style="height: 370px; width: 450px;">
+                                </div><!-- /.event-two__image-inner -->
+                            </div><!-- /.event-two__image -->
+                        </div><!-- /.col-lg-5 -->
+                        <div class="col-lg-7 d-flex">
+                            <div class="my-auto">
+                                <div class="event-two__content">
+
+                                    <p>打线就是先用碳笔在白布上将要画的图案精致的打出线稿，通过打线素描先画出神、佛像的骨架并确定比例，然后画上衣服、装饰、宝冠及法器等。
+                                    </p>
+
+                                </div><!-- /.event-two__content -->
+
+                            </div><!-- /.my-auto -->
+                        </div><!-- /.col-lg-7 -->
+                    </div><!-- /.row -->
+                </div><!-- /.event-two__single -->
+            </div><!-- /.container -->
+        </section><!-- /.event-two -->
+
+        <footer class="site-footer">
+
+            <div class="site-footer__bottom">
+                <div class="container">
+                    <div class="inner-container">
+                        <p>&copy; Copyright 2021 Visualization Institute All Rights Reserved</p>
+                        <a href="/resource/index" class="site-footer__bottom-logo">
+                            <img src="../static/images/team/logo-1.png" alt="">
+                        </a>
+                        <div class="site-footer__bottom-links">
+                            <a href="#">Terms & conditions</a>
+                            <a href="#">Privacy policy & Terms of use</a>
+                        </div><!-- /.site-footer__bottom-links -->
+                    </div><!-- /.inner-container -->
+                </div><!-- /.container -->
+            </div><!-- /.site-footer__bottom -->
+        </footer><!-- /.site-footer -->
+    </div><!-- /.page-wrapper -->
+
+    <div class="search-popup">
+        <div class="search-popup__overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.search-popup__overlay -->
+        <div class="search-popup__inner">
+            <form action="#" class="search-popup__form">
+                <input type="text" name="search" placeholder="Type here to Search....">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div><!-- /.search-popup__inner -->
+    </div><!-- /.search-popup -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- Template JS -->
+
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/bootstrap-datepicker.min.js"></script>
+    <script src="../static/js/bootstrap-select.min.js"></script>
+    <script src="../static/js/isotope.js"></script>
+    <script src="../static/js/jquery.ajaxchimp.min.js"></script>
+    <script src="../static/js/jquery.counterup.min.js"></script>
+    <script src="../static/js/jquery.magnific-popup.min.js"></script>
+    <script src="../static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../static/js/jquery.validate.min.js"></script>
+    <script src="../static/js/owl.carousel.min.js"></script>
+    <script src="../static/js/TweenMax.min.js"></script>
+    <script src="../static/js/waypoints.min.js"></script>
+    <script src="../static/js/wow.min.js"></script>
+    <script src="../static/js/jquery.lettering.min.js"></script>
+    <script src="../static/js/jquery.circleType.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="../static/js/theme.js"></script>
+</body>
+
+</html>

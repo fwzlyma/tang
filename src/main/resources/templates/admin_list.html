@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>
+        管理员列表
+    </title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="/css/main.css" media="all">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body>
+<div class="x-nav">
+            <span class="layui-breadcrumb">
+              <a><cite>首页</cite></a>
+              <a><cite>管理员管理</cite></a>
+              <a><cite>管理员列表</cite></a>
+            </span>
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
+</div>
+<div class="x-body">
+
+    <table   class="layui-hide"  id="dataTable" lay-filter="dataTable" ></table>
+
+
+</div>
+<script type="text/html" id="operateBar1">
+
+    <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="edit">禁用</a>
+    <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="editO">启用</a>
+
+</script>
+<script type="text/html" id="operateBar2">
+    <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="delete">删除</a>
+
+</script>
+<script src="../static/js/layui/layui.js"></script>
+<script src="js/x-layui.js"></script>
+<script>
+    layui.use(["table","upload","form","jquery","layer"], function(){
+        var table = layui.table;
+        var upload = layui.upload;
+        var form = layui.form;
+        var $=layui.$;
+        var  layer = layui.layer;
+        var table = layui.table;
+
+
+        table.render({
+            elem: "#dataTable"
+            ,id:"dataTable"
+            ,url:"/user/allUser"
+            ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+                layout: ["count", "prev", "page", "next"] //自定义分页布局
+                ,groups: 2 //只显示 1 个连续页码
+            },cols: [
+                [
+                    // {field:"id",  title: "id"}
+                    {field:"account",  title: "用户名"}
+                    ,{field:"nickname",  title: "昵称"}
+                    ,{field:"type", title: "用户类型"}
+                    , {
+                    field : 'operate1',
+                    title : '状态',
+                    toolbar : '#operateBar1',
+                    align: "center"
+                },{
+                    field : 'operate2',
+                    title : ' 操 作',
+                    toolbar : '#operateBar2',
+                    align: "center"
+                }
+                ]
+            ]
+            ,limit:8
+            ,done:function (res) {
+            }
+        });
+
+        table.on('tool(dataTable)', function(obj){
+            console.log('toolbar , obj',obj);
+            let data = obj.data; //获得当前行数据
+            console.log('toolbar , data',data);
+
+            switch(obj.event){
+                case 'delete':
+                    console.log('toolbar , 删除',data);
+                    $.ajax({
+                        url:"/user/removeUser",
+                        data: {id:obj.data.id},
+                        dataType: "json",
+                        success: function (data) {
+                            if (data==1){
+                                layui.table.reload('dataTable',{page:{curr:1}});
+                            }
+                        },
+                        error:function(data){
+                            console.log('toolbar delete error',data);
+                        }
+                    });
+                    break;
+                case 'edit':
+                    console.log('toolbar , 修改',data);
+                    $.ajax({
+                        url:"/user/updatestatu",
+                        data: {id:obj.data.id},
+                        dataType: "json",
+                        success: function (data) {
+                            if (data==1){
+                                layer.msg("禁用成功");
+                                layui.table.reload('dataTable',{page:{curr:1}});
+                            }
+                        },
+                        error:function(data){
+                            console.log('toolbar delete error',data);
+                        }
+                    });
+                    break;
+                case 'editO':
+                    console.log('toolbar , 修改',data);
+                    $.ajax({
+                        url:"/user/updateOpen",
+                        data: {id:obj.data.id},
+                        dataType: "json",
+                        success: function (data) {
+                            if (data==1){
+                                layer.msg("启用成功");
+                                layui.table.reload('dataTable',{page:{curr:1}});
+                            }
+                        },
+                        error:function(data){
+                            console.log('toolbar delete error',data);
+                        }
+                    });
+                    break;
+            };
+
+        });
+        // var start = {
+        //     min: laydate.now()
+        //     ,max: '2099-06-16 23:59:59'
+        //     ,istoday: false
+        //     ,choose: function(datas){
+        //         end.min = datas; //开始日选好后，重置结束日的最小日期
+        //         end.start = datas //将结束日的初始值设定为开始日
+        //     }
+        // };
+
+        // var end = {
+        //     min: laydate.now()
+        //     ,max: '2099-06-16 23:59:59'
+        //     ,istoday: false
+        //     ,choose: function(datas){
+        //         start.max = datas; //结束日选好后，重置开始日的最大日期
+        //     }
+        // };
+
+        // document.getElementById('LAY_demorange_s').onclick = function(){
+        //     start.elem = this;
+        //     laydate(start);
+        // }
+        // document.getElementById('LAY_demorange_e').onclick = function(){
+        //     end.elem = this
+        //     laydate(end);
+        // }
+
+    });
+
+    //批量删除提交
+    // function delAll () {
+    //     layer.confirm('确认要删除吗？',function(index){
+    //         //捉到所有被选中的，发异步进行删除
+    //         layer.msg('删除成功', {icon: 1});
+    //     });
+    // }
+    /*添加*/
+    function admin_add(title,url,w,h){
+        x_admin_show(title,url,w,h);
+    }
+
+    /*停用*/
+    // function admin_stop(obj,id,e){
+    //     layer.confirm(e==1?'你确定要启用吗？':'你确定要禁用吗？',{icon: 3, title:'提示'},function(index){
+    //         $.ajax({
+    //             type:"post",
+    //             url:"xxx",
+    //             data:{id:id,status:e},
+    //             dataType:"json",
+    //             success:function(data)
+    //             {
+    //                 if(data.status==1){
+    //                     //发异步把用户状态进行更改
+    //                     $(obj).attr("class","layui-btn layui-btn-danger ");
+    //                     $(obj).text("隐藏");
+    //                     $(obj).remove();
+    //                     layer.msg(data.info,{icon: 6,time:1000});
+    //                     setTimeout(function(){
+    //                         window.location.reload();
+    //                     },1000);return false;
+    //                 }else{
+    //                     //发异步把用户状态进行更改
+    //                     $(obj).attr("class","layui-btn layui-btn-normal ");
+    //                     $(obj).text("显示");
+    //                     $(obj).remove();
+    //                     layer.msg(data.info,{icon: 5,time:1000});return false;
+    //                 }
+    //             }
+    //         });
+    //
+    //     });
+    // }
+
+    /*启用*/
+    // function admin_start(obj,id){
+    //     layer.confirm('确认要启用吗？',function(index){
+    //         //发异步把用户状态进行更改
+    //         $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="admin_stop(this,id)" href="javascript:;" title="停用"><i class="layui-icon">&#xe601;</i></a>');
+    //         $(obj).parents("tr").find(".td-status").html('<span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span>');
+    //         $(obj).remove();
+    //         layer.msg('已启用!',{icon: 6,time:1000});
+    //     });
+    // }
+    //编辑
+    function admin_edit (title,url,id,w,h) {
+        url = url+"?id="+id;
+        x_admin_show(title,url,w,h);
+    }
+    /*删除*/
+    function admin_del(obj,id){
+        layer.confirm('确认要删除吗？',function(index){
+            //发异步删除数据
+            $(obj).parents("tr").remove();
+            layer.msg('已删除!',{icon:1,time:1000});
+        });
+    }
+</script>
+
+</body>
+</html>

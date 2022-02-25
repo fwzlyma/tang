@@ -1,6 +1,8 @@
 package com.nw.ServiceImpl;
 
 import com.nw.po.Resource;
+import com.nw.po.ResourceClass;
+import com.nw.repository.ResourceClassRepository;
 import com.nw.repository.ResourceRepository;
 import com.nw.service.ResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,8 @@ import java.util.List;
 public class ResourceServiceImpl implements ResourceService {
     @Autowired
     private ResourceRepository resourceRepository;
+    @Autowired
+    private ResourceClassRepository resourceClassRepository;
     @Override
     public List<Resource> findAllResource(Pageable pageable) {
         return resourceRepository.findAllBy(pageable);
@@ -39,6 +43,17 @@ public class ResourceServiceImpl implements ResourceService {
     @Override
     public int findCountByTypeId(Long id) {
         return resourceRepository.countResourceByTypeid(id);
+    }
+
+    @Override
+    public List<Resource> findResourceByTypeName(String typename, Pageable pageable) {
+        //根据类型名 获取到类型
+        ResourceClass resourceClass = resourceClassRepository.findResourceClassByTypename(typename);
+        Long typeId = resourceClass == null?0L:resourceClass.getId();
+
+        //根据类型ID获取到唐卡列表
+        List<Resource> list = resourceRepository.findResourceByTypeid(typeId, pageable);
+        return list;
     }
 
     @Override

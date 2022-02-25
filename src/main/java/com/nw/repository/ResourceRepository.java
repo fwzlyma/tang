@@ -40,12 +40,13 @@ public interface ResourceRepository extends JpaRepository<Resource, Integer> {
     @Query(value = "delete from resource  where id in ?1",nativeQuery = true)
     int deleteByIds(long[] ids);
 
-    @Modifying
-    @Query(value = "delete from resource  where id = ?1",nativeQuery = true)
-    int deleteById(long id);
+    @Query(value = "select * from resource  where id = ?1",nativeQuery = true)
+    Resource getOneById(long id);
 
     List<Resource> getAllByType(String type, Pageable pageable);
-
+    @Query(value = "select count(*) from resource  where typeid = ?1",nativeQuery = true)
     int countByType(String type);
+
+    int deleteById(Long id);
 
 }

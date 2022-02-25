@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        修改唐卡信息
+    </title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" src="/lib/loading/okLoading.js"></script>
+    <link rel="stylesheet" href="/css/main.css" media="all">
+</head>
+<style>
+    .imgs{display: none;}
+    .picture{display: none;}
+</style>
+<body>
+<div class="x-body" id="myModal">
+    <form class="layui-form" id="editForm" lay-filter="editForm">
+        <input type="hidden" name="id" value="">
+        <div class="layui-form-item">
+            <label for="username" class="layui-form-label">
+                <span class="x-red">*</span>名称
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="name" name="resourcename" required="" lay-verify="required"
+                       autocomplete="off" class="layui-input" value="">
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="x-red">*</span>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="role" class="layui-form-label">
+                <span class="x-red">*</span>类别
+            </label>
+            <div class="layui-input-inline">
+                <select name="typeid" id="typeid" >
+                </select>
+                <input type="hidden" name="productTypeId" id="productTypeId2" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="link" class="layui-form-label">
+                <span class="x-red">*</span>资源文件
+            </label>
+            <div class="layui-input-inline">
+                <div class="site-demo-upbar">
+                    <div class=" layui-upload-button" style="border:#FFFFFF ;">
+                        <button type="button" class="layui-btn" id="test1">
+                            <i class="layui-icon">&#xe67c;</i>上传图片
+                        </button>
+                        <input class="layui-upload" type="file" accept="undefined" id="uploadInput" name="uploadInput" onchange="upload(this,)">
+                        <input id="uploadpath"   name="uploadpath" required="" type="hidden"  value="">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="text" class="layui-form-label">
+                <span class="x-red">*</span>详情介绍
+            </label>
+            <div class="layui-input-inline">
+                <input type="text"  name="introduction" required="" lay-verify=""
+                       autocomplete="off" class="layui-input" value="">
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="x-red">*</span>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="L_repass" class="layui-form-label">
+            </label>
+            <button  class="layui-btn" lay-filter="edit-submit" lay-submit="edit-submit">
+               确认修改
+            </button>
+        </div>
+    </form>
+</div>
+<script src="../static/js/layui/layui.js"></script>
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/x-layui.js" charset="utf-8"></script>
+<script>
+    let data;
+    function child(_data){
+        data = _data;
+        layui.use(['form','layer'], function(){
+            console.log("data2"+data)
+            $ = layui.jquery;
+            let  form = layui.form
+                ,layer = layui.layer;
+            okLoading.close($);
+            let defaultTypeId = data.typeid;
+            if (data && form){
+                form.val("editForm", {
+                    "id": data.id
+                    ,"resourcename": data.resourcename
+                    ,"typeid": data.typeid
+                    ,"uploadpath": data.uploadpath
+                    ,"introduction": data.introduction
+                });
+            }
+
+            //监听提交
+            form.on('submit(edit-submit)', function(data){
+                var admindate=$("#editForm").serialize();
+                if ($("#uploadpath").val() == ""){
+                    layer.msg("图片上传未成功，请重新上传图片！",{icon:5,time:1000});
+                    return false;
+                }
+                $.ajax({
+                    type:'post',
+                    url:"/resource/updateResource",
+                    data:admindate,
+                    datatype:"json",
+                    success:function (data) {
+                        if(data==1){
+                            layer.msg("修改成功",{icon:1,time:1000});
+                            setTimeout(function(){
+                                window.parent.location.reload();
+                                var index = parent.layer.getFrameIndex(window.name);
+                                parent.layer.close(index);
+                            },1000);
+                            return false;
+                        }else{
+                            layer.msg("修改失败",{icon:5,time:2000});return false;
+                        }
+                    }
+                })
+                return false;
+            });
+
+            // 商品类型数组
+            var resourceType;
+
+            //获取下拉列表数据
+            $.ajax({
+                url:"/resourceClassType/getTypeList",
+                type:"post",
+                dataType:"json",
+                success:function (data1) {
+                    resourceType = data1.data;
+                    for (var i = 0; i < resourceType.length; i++){
+                        if (resourceType[i].id == defaultTypeId){
+                            $('#typeid').append(new Option(resourceType[i].typename, resourceType[i].id, true, true));// 下拉菜单里添加元素
+                        }else {
+                            $('#typeid').append(new Option(resourceType[i].typename, resourceType[i].id));// 下拉菜单里添加元素
+                        }
+                    }
+                    layui.form.render("select");
+                }
+            });
+
+
+        });
+    }
+</script>
+<script>
+    var layer = layui.layer;
+    //上传
+    function upload(obj,id){
+        // 将获取到的文件添加到FormData中
+        var formData = new FormData();
+        formData.append('file', $('#uploadInput')[0].files[0]);
+        if ($('#uploadInput')[0].files[0].size > 10485760*2){
+            layer.msg("上传文件大小不要超过20M！",{icon:5,time:1000});
+            return false;
+        }
+        $.ajax({
+            type:"post",
+            processData: false,
+            contentType: false,
+            url:"/upload/file",
+            data:formData,
+            success:function(data){
+                if(data.code == 0){
+                    console.log(data.uploadpath);
+                    layer.closeAll('loading');
+                    layer.msg("图片修改成功",{icon:1,time:1000});
+                    $("#uploadpath").val(data.uploadpath);
+                    return false;
+                }else{
+                    layer.msg("图片修改失败",{icon:2,time:1000});
+                }
+            }
+        });
+    }
+</script>
+
+</body>
+
+</html>
